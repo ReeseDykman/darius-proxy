@@ -27,6 +27,6 @@ app.post('/response', (req, res) => {
 
 // Start the proxy server on port 8080 (or your preferred port)
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Proxy server is running on http://localhost:${PORT}`);
+const listener = app.listen(process.env.PORT, function() {
+  console.log("Your app is listening on port " + listener.address().port);
 });
